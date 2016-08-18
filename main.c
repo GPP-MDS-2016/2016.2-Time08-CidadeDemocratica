@@ -40,3 +40,7 @@ void printMenu() {
 void printInvalidOptionMessage() {
   printf("Escolha uma opcao valida\n");
 }
+ int sub(int numA,int numB){
+   int result = numA - numB;
+   return result;
+ }
