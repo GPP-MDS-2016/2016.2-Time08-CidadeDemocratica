@@ -23,17 +23,22 @@
           scanf("%d%d\n", &numA, &numB);
           result = add(numA, numB);
           break;
-       case 2:
+        case 2:
           scanf("%d%d", &numA, &numB);
           result = sub(numA, numB);
           break;
-      case 3:
+        case 3:
           scanf("%d%d", &numA, &numB);
           result = div(numA, numB);
+          break;
+        case 4:
+          scanf("%d%d", &numA, &numB);
+          result = mult(numA, numB);
+          break;
         default:
           printInvalidOptionMessage();
       }
-    } while (option > 3 || option < 1);
+    } while (option > 4 || option < 1);
 
     printf("%d\n", result);
 
