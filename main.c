@@ -3,7 +3,7 @@
 void printMenu();
 void printInvalidOptionMessage();
 int add(int a, int b);
-
+ int sub(int numA,int numB);
 int main() {
 
   printMenu();
@@ -38,7 +38,7 @@ int add(int a, int b) {
 }
 
 void printMenu() {
-  printf("1. Add\n");
+  printf("1. Add\n2. Sub\n");
 }
 
 void printInvalidOptionMessage() {
