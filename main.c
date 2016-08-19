@@ -3,7 +3,8 @@
 void printMenu();
 void printInvalidOptionMessage();
 int add(int a, int b);
- int sub(int numA,int numB);
+int sub(int numA,int numB);
+int div(int numA, int numB);
 int main() {
 
   printMenu();
@@ -48,3 +49,7 @@ void printInvalidOptionMessage() {
    int result = numA - numB;
    return result;
  }
+int div(int numA, int numB){
+  int result  = numA / numB;
+  return result;
+}
