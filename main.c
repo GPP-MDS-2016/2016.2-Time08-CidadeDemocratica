@@ -2,9 +2,10 @@
 
   void printMenu();
   void printInvalidOptionMessage();
-  int add(int a, int b);
+  int add(int numA, int numB);
   int sub(int numA, int numB);
   int div(int numA, int numB);
+  int mult(int numA, int numB);
 
   int main() {
 
@@ -39,8 +40,9 @@
     return 0;
   }
 
-  int add(int a, int b) {
-    return a + b;
+  int add(int numA, int numB) {
+    int result = numA + numB;
+    return result;
   }
 
   int sub(int numA, int numB) {
@@ -50,6 +52,11 @@
 
   int div(int numA, int numB) {
     int result = numA / numB;
+    return result;
+  }
+
+  int mult(int numA, int numB) {
+    int result = numA * numB;
     return result;
   }
 
