@@ -6,12 +6,20 @@
   int sub(int numA, int numB);
   int div(int numA, int numB);
   int mult(int numA, int numB);
+  void runOperations();
 
   int main() {
 
-    printMenu();
-    int option = 0;
+    runOperations();
+    printf("%d\n", result);
 
+    return 0;
+  }
+
+  void runOperations() {
+    printMenu();
+
+    int option = 0;
     scanf("%d", &option);
 
     int numA = 0, numB = 0;
@@ -39,10 +47,6 @@
           printInvalidOptionMessage();
       }
     } while (option > 4 || option < 1);
-
-    printf("%d\n", result);
-
-    return 0;
   }
 
   int add(int numA, int numB) {
@@ -66,7 +70,7 @@
   }
 
   void printMenu() {
-    printf("1. Add\n2. Sub\n3. Div\n");
+    printf("1. Add\n2. Sub\n3. Div\n4. Mult\n");
   }
 
   void printInvalidOptionMessage() {
