@@ -20,10 +20,14 @@ int main() {
         scanf("%d%d\n", &numA, &numB);
         result = add(numA, numB);
         break;
+     case 2:
+        scanf("%d%d",&numA,&numB);
+        result = sub(numA,numB);
+        break;
       default:
         printInvalidOptionMessage();
     }
-  } while (option != 1);
+  } while (option > 2 || option < 1);
   printf("%d\n",result );
 
   return 0;
