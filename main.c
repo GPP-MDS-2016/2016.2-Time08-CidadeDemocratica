@@ -32,7 +32,8 @@
         default:
           printInvalidOptionMessage();
       }
-    } while (option > 2 || option < 1);
+    } while (option > 3 || option < 1);
+
     printf("%d\n", result);
 
     return 0;
@@ -42,20 +43,20 @@
     return a + b;
   }
 
-  void printMenu() {
-    printf("1. Add\n2. Sub\n");
-  }
-
-  void printInvalidOptionMessage() {
-    printf("Escolha uma opcao valida\n");
-  }
-
   int sub(int numA, int numB) {
     int result = numA - numB;
     return result;
   }
 
   int div(int numA, int numB) {
-    int result  = numA / numB;
+    int result = numA / numB;
     return result;
+  }
+
+  void printMenu() {
+    printf("1. Add\n2. Sub\n3. Div\n");
+  }
+
+  void printInvalidOptionMessage() {
+    printf("Escolha uma opcao valida\n");
   }
