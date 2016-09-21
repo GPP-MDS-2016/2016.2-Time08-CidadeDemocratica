@@ -5,6 +5,8 @@ import android.test.AndroidTestCase;
 import com.mdsgpp.cidadedemocratica.persistence.DataContainer;
 
 import java.util.ArrayList;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -13,6 +15,7 @@ import org.junit.Test;
 public class UserTest extends AndroidTestCase {
 
     User user;
+    User newUser;
     Tag ciclismo;
     Proposal proposalTest;
     Proposal proposalTest2;
@@ -22,6 +25,7 @@ public class UserTest extends AndroidTestCase {
     @Override
     public void setUp() {
         user = newUser();
+        newUser = newUserNew();
         ciclismo = newTag();
         tags.add(ciclismo);
         proposalTest = newProposal();
@@ -49,6 +53,27 @@ public class UserTest extends AndroidTestCase {
     }
 
     @Test
+    public void testGetDescription() {
+        assertEquals(newUser.getDescription(),"Description");
+    }
+
+    @Test
+    public void testGetRelevance() {
+        assertEquals(newUser.getRelevance(),0);
+    }
+
+    @Test
+    public void testGetId() {
+        assertEquals(newUser.getId(),0);
+    }
+
+    @Test
+    public void testToString() {
+        assertEquals(newUser.toString(),"Name");
+    }
+
+
+    @Test
     public void testGetsTags() {
         tags.add(ciclismo);
         assertTrue(this.user.getMostUsedTags().equals(tags));
@@ -72,4 +97,29 @@ public class UserTest extends AndroidTestCase {
         return new Proposal(0, "title", "content", 0, 0);
     }
     private User newUser() {return new User("Name", 0, 0,0);}
+
+    private User newUserNew() {return new User("Name","Description", 0, 0,0);}
+
+    @Test
+    public  void testCompraToGreater(){
+            User userGreater = new User ("Name","Description",0,0,10);
+            assertEquals(newUser.compareTo(userGreater),1);
+
+    }
+
+    @Test
+    public  void testCompraToNegative(){
+        User userGreater = new User ("Name","Description",0,0,-1);
+        assertEquals(newUser.compareTo(userGreater),-1);
+
+    }
+
+    @Test
+    public  void testCompraToEquals(){
+        User userGreater = new User ("Name","Description",0,0,0);
+        assertEquals(newUser.compareTo(userGreater),0);
+
+    }
+
+
 }
